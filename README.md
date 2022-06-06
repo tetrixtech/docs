@@ -17,49 +17,24 @@ Welcome to Pitaka's documentation. Pitaka is a tool designed for ease of use and
 {% embed url="https://www.youtube.com/watch?v=RXyzC9g4P1c" %}
 
 {% hint style="info" %}
-**Good to know:** This video shows you how to jumpstart your Pitaka wallet.
+**Note:** This video shows you how to jumpstart your Pitaka wallet.
 {% endhint %}
 
 ### Why Pitaka?
 
-Pitaka is a non-custodial, multi-chain wallet
+Pitaka is a non-custodial, multi-chain wallet wherein you can securely store, manage, and exchange blockchain assets across different networks.
 
-{% content-ref url="guides/creating-your-first-project.md" %}
-[creating-your-first-project.md](guides/creating-your-first-project.md)
-{% endcontent-ref %}
+* [Get Started](guides/getting-started.md)
+* [Pitaka Feature List](guides/pitaka-feature-list.md)
 
-{% content-ref url="guides/creating-your-first-task.md" %}
-[creating-your-first-task.md](guides/creating-your-first-task.md)
-{% endcontent-ref %}
+### Account Management
 
-{% content-ref url="guides/advanced-permissions.md" %}
-[advanced-permissions.md](guides/advanced-permissions.md)
-{% endcontent-ref %}
+Pitaka allows user to manage accounts and their keys including hardware wallets, while retaining full control. Pitaka does not store user keys on a single central server.
 
-{% hint style="info" %}
-**Good to know:** your product docs aren't just a reference of all your features! use them to encourage folks to perform certain actions and discover the value in your product.
-{% endhint %}
+This feature comes with developer convenience. For developers, you simply interact with the globally available `ethereum` API that identifies the users of web3-compatible browsers and whenever you request a transaction signature (like `eth_sendTransaction` , `ethSignTypedData`, or others).
 
-### Fundamentals: Dive a little deeper
+### Blockchain Connection
 
-Learn the fundamentals of MyProduct to get a deeper understanding of our main features:
+Pitaka comes pre-loaded with 25 blockchains. This allows you to get started without synchronizing a full node while still be able to use the blockchain of your choice.
 
-{% content-ref url="fundamentals/projects.md" %}
-[projects.md](fundamentals/projects.md)
-{% endcontent-ref %}
-
-{% content-ref url="fundamentals/members.md" %}
-[members.md](fundamentals/members.md)
-{% endcontent-ref %}
-
-{% content-ref url="fundamentals/task-lists.md" %}
-[task-lists.md](fundamentals/task-lists.md)
-{% endcontent-ref %}
-
-{% content-ref url="fundamentals/tasks.md" %}
-[tasks.md](fundamentals/tasks.md)
-{% endcontent-ref %}
-
-{% hint style="info" %}
-**Good to know:** Splitting your product into fundamental concepts, objects, or areas can be a great way to let readers deep dive into the concepts that matter most to them. Combine guides with this approach to 'fundamentals' and you're well on your way to great documentation!
-{% endhint %}
+Currently, Pitaka is compatible with [Ethereum-compatible JSON RPC API](https://eth.wiki/json-rpc/API).&#x20;
