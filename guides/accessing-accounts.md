@@ -7,7 +7,7 @@ User accounts are used in a variety of contexts in Ethereum, including as identi
 * `eth_personalSign`
 * `eth_signTypeData`
 
-Once you've [connected to a user](../#connecting-to-pitaka), you can always re-check the current account by checking `ethereum.selectedAddress`
+Once you've [connected to a user](getting-started.md#connecting-to-pitaka), you can always re-check the current account by checking `ethereum.selectedAddress`
 
 If you'd like to be notified when the address changes, we have an event you can subscribe to:
 
