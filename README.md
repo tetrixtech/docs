@@ -1,87 +1,26 @@
-# Getting Started
+# Introduction
 
-To develop for Pitaka, install Pitaka in the browser of your choice (Google Chrome, Brave Browser) on your development machine. [Download here.](https://pitaka.io)
+Welcome to Pitaka's Developer Documentation. Pitaka is a tool for ease of use and access for user interactions and experiences on Web3. It is currently available as a browser extension. The purpose of this documentation is to illustrate how to a build a DApp with Pitaka.
 
-{% hint style="warning" %}
-_This guide assumes intermediate knowledge of HTML, CSS, and JavaScript._
-{% endhint %}
+* You can find the latest version of Pitaka on our [official website](https://pitaka.io).
+* To learn more about the project, head on over to our [GitHub](https://github.com/tetrixtech/pitaka-wallet) (Currently Unavailable)
 
-Once Pitaka is installed and running (make sure you backup your Mnemonic Key), you should find that new browser tabs have a `window.ethereum` object available in the developer console. This is how your website will interact with Pitaka.
+### Why Pitaka?
 
-## Basic Considerations
+Pitaka was created to make the user experience of Web3 a seamless experience. In particular, it handles account management and connecting users to blockchains. Pitaka is a non-custodial, multi-chain cryptowallet that securely stores, manage, and exchange blockchain assets across different blockchains.
 
-### Web3 Browser Detection
+* [Get Started](<README (1).md>)
+* [Pitaka Feature List](guides/pitaka-feature-list.md)
 
-To verify if the browser is running Pitaka, copy and paste the code snippet below in the developer console of your web browser:
+### Account Management
 
-```javascript
-if (typeof window.ethereum !== 'undefined') {
-  console.log('Pitaka is installed!');
-}
-```
+Pitaka allows users to manage accounts and their keys, including hardware wallets, while isolating them from the site context.
 
-### Connecting to Pitaka
+This security feature also comes with developer convenience. For developers, you simply interact with the globally available `ethereum` API that identifies the users of web3-compatible browsers (like Google Chrome and Brave Browser) whenever you request a transaction signature (_`eth_sendTransaction`, `eth_signTypedData,` or others)._ Pitaka will prompt the user in a comprehensible way as possible. This keeps users informed, and leaves attacked only the option of trying to phish individual users, rather than performing mass attacks.
 
-"Connecting" or "logging in" to Pitaka effectively means "to access the user's account(s)".
+### Blockchain Connection
 
-You should only initiate a connection request in response to direct user action, such as clicking a button. You should always disable the "connect" button while the connection is pending. You should never initiate a connection request on page load.
+Pitaka comes pre-loaded with 25 blockchain connections. This allows you to get started without synchronizing a full node while providing the option to choose the blockchain provider of your choice.
 
-We recommend that you provide a button to allow the user to connect Pitaka to your DApp. Clicking this button should call the following method:
+Currently, Pitaka is compatible with [Ethereum-compatible JSON RPC API](https://eth.wiki/json-rpc/API).
 
-```javascript
-ethereum.request({ method: 'eth_requestAccounts' });
-```
-
-{% tabs %}
-{% tab title="HTML" %}
-```html
-<button class="enablePitakaButton">Connect Wallet</button>
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
-```javascript
-const pitakaButton = document.querySelector('.enablePitakaButton');
-
-pitakaButton.addEventListener('click', () => {
-  //Will Start the Pitaka extension
-  ethereum.request({ method: 'eth_requestAccounts' });
-});
-```
-{% endtab %}
-{% endtabs %}
-
-This promise-returning function resolves with an array of hex-prefixed addresses, which can be used as a general account reference when sending transactions.
-
-Since it returns a promise, if you're in an `async` function, you may log in like this:
-
-```javascript
-const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-const account = accounts[0];
-```
-
-{% tabs %}
-{% tab title="HTML" %}
-```html
-<button class="enablePitakaButton">Connect Wallet</button>
-<h2>Account: <span class="showAccount"></span></h2>
-```
-{% endtab %}
-
-{% tab title="Javascript" %}
-```javascript
-const pitakaButton = document.querySelector('.enablePitakaButton');
-const showAccount = document.querySelector('.showAccount');
-
-pitakaButton.addEventListener('click', () => {
-  getAccount();
-});
-
-async function getAccount() {
-  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-  const account = accounts[0];
-  showAccount.innerHTML = account;
-}
-```
-{% endtab %}
-{% endtabs %}
