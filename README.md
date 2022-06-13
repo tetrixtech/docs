@@ -9,8 +9,8 @@ Welcome to Pitaka's Developer Documentation. Pitaka is a tool for ease of use an
 
 Pitaka was created to make the user experience of Web3 a seamless experience. In particular, it handles account management and connecting users to blockchains. Pitaka is a non-custodial, multi-chain cryptowallet that securely stores, manage, and exchange blockchain assets across different blockchains.
 
-* [Get Started](guides/getting-started/)
-* [Pitaka Feature List](guides/pitaka-feature-list.md)
+* [Get Started](<README (1).md>)
+* [Pitaka Feature List](resources/pitaka-feature-list.md)
 
 ### Account Management
 
